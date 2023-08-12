@@ -10,8 +10,8 @@ int main(void)
 	int i;
 	int j;
 
-	for (i = 0; i <= n; i++)
-		for (j = 0; j <= n; j++)
+	for (i = 0; i <= 98; i++)
+		for (j = 0; j <= 99; j++)
 			{
 				putchar(i / 10 + '0');
 				putchar(i % 10 + '0');
