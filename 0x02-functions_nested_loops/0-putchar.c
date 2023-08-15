@@ -5,7 +5,6 @@
  *
  * Return: 0 Always
  */
-int _putchar(char c);
 int main(void)
 {
 	char c[9] = "_putchar";
