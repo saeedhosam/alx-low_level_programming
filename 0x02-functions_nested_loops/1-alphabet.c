@@ -2,7 +2,6 @@
 
 /**
 * print_alphabet - print a lowercased alphabet
-*
 * Return: Void.
 */
 void print_alphabet(void)
