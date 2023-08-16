@@ -5,12 +5,6 @@
  *
  * Return: Always 0.
  */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
-
 void print_alphabet(void)
 {
 	int i;
@@ -19,3 +13,11 @@ void print_alphabet(void)
 		_putchar(i + '0');
 	_putchar('\n');
 }
+
+int main(void)
+{
+	print_alphabet();
+	return (0);
+}
+
+
