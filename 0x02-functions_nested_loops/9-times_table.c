@@ -17,21 +17,20 @@ void times_table(void)
 				l = i * j;
 				while (l >= 10)
 					l = l / 10;
+				_putchar(',');
+				_putchar(' ');
 				_putchar(l + '0');
 				k = (i * j) % 10;
 				_putchar(k + '0');
-				if (j == 9)
-					continue;
-				_putchar(',');
-				_putchar(' ');
 					continue;
 			}
+			if (j > 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+			}
 			_putchar((i * j) + '0');
-			if (j == 9)
-				continue;
-			_putchar(',');
-			_putchar(' ');
-			_putchar(' ');
 		}
 		_putchar('\n');
 	}
