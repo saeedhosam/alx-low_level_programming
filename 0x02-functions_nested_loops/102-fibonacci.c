@@ -11,7 +11,7 @@ int main(void)
 	long fn3 = 0;
 	long fn2 = 1;
 	long fn1;
-	int i = 51;
+	int i = 52;
 
 		for (n = 0; n < i; n++)
 		{
