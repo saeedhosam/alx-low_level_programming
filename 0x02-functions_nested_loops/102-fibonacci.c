@@ -8,9 +8,9 @@
 int main(void)
 {
 	int n;
-	int fn3 = 0;
-	int fn2 = 1;
-	int fn1;
+	long fn3 = 0;
+	long fn2 = 1;
+	long fn1;
 	int i = 50;
 
 		for (n = 0; n < i; n++)
@@ -23,7 +23,7 @@ int main(void)
 				fn2 = fn3;
 				fn3 = fn1;
 			}
-			printf("%d", fn1);
+			printf("%ld", fn1);
 			if (n != (i - 1))
 				printf(", ");
 		}
@@ -31,8 +31,3 @@ int main(void)
 
 	return (0);
 }
-
-/**
- * 0, 1, 
- */
-
