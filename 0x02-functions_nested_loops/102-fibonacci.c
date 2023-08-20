@@ -11,9 +11,9 @@ int main(void)
 	long fn3 = 0;
 	long fn2 = 1;
 	long fn1;
-	int i = 50;
+	int i = 51;
 
-		for (n = 1; n < i; n++)
+		for (n = 0; n < i; n++)
 		{
 			if (n < 1)
 				fn1 = n;
@@ -23,8 +23,10 @@ int main(void)
 				fn2 = fn3;
 				fn3 = fn1;
 			}
+			if (n < 2)
+				continue;
 			printf("%ld", fn1);
-			if (n != (i - 1))
+			if (n != i - 1)
 				printf(", ");
 		}
 		printf("\n");
