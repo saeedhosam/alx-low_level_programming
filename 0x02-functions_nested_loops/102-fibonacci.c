@@ -13,7 +13,7 @@ int main(void)
 	long fn1;
 	int i = 50;
 
-		for (n = 0; n < i; n++)
+		for (n = 1; n < i; n++)
 		{
 			if (n < 1)
 				fn1 = n;
