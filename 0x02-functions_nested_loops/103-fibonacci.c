@@ -26,15 +26,12 @@ int main(void)
 			}
 			if (n < 2)
 				continue;
-			printf("%ld", fn1);
 			if (fn1 % 2 == 0 && fn1 <= 4000000)
 			{
 				sum = sum + fn1;
-				printf("%ld", sum);
 			}
-			if (n != i - 1)
-				printf(", ");
 		}
+		printf("%ld", sum);
 		printf("\n");
 
 	return (0);
