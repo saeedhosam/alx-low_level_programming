@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * rev_string - a function that prints a string in reverse
@@ -18,5 +18,4 @@ void rev_string(char *s)
 		s[j] = s[i - j - 1];
 		s[i - j - 1] = k;
 	}
-	printf("%s\n", s);
 }
