@@ -29,5 +29,8 @@ int _atoi(char *s)
 		else if (j != 0)
 			break;
 	}
-	return (k * j);
+	if (j == 2147483647)
+		return (k * (j + 1));
+	else
+		return (k * j);
 }
