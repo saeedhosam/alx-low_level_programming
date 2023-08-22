@@ -13,10 +13,7 @@ int _atoi(char *s)
 	{
 		if (s[i] >= 48 && s[i] <= 57)
 		{
-			if (j == 214748364)
-				j = j * 10 + ((s[i] - '0') - 1);
-			else
-				j = j * 10 + (s[i] - '0');
+			j = j * 10 + (s[i] - '0');
 		}
 		else if (s[i] == 45)
 		{
@@ -29,8 +26,5 @@ int _atoi(char *s)
 		else if (j != 0)
 			break;
 	}
-	if (j == 2147483647)
-		return (k * (j + 1));
-	else
-		return (k * j);
+	return (k * j);
 }
