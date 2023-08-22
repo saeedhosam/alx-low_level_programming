@@ -23,6 +23,8 @@ int _atoi(char *s)
 		{
 			k = k * 1;
 		}
+		else if (j != 0)
+			break;
 		else
 			continue;
 	}
