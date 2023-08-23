@@ -8,11 +8,20 @@
 */
 int _strcmp(char *s1, char *s2)
 {
-	int i, j, sum1 = 0, sum2 = 0;
+	int i, dif;
 
-	for (i = 0; s1[i] != '\0'; i++)
-		sum1 = sum1 + s1[i];
-	for (j = 0; s2[j] != '\0'; j++)
-		sum2 = sum2 + s2[j];
-	return (sum1 - sum2);
+	for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			dif = s1[i] - s2[i];
+			break;
+		}
+		else if (s1[i] == s2[i])
+		{
+			dif = 0;
+			break;
+		}
+	}
+	return (dif);
 }
