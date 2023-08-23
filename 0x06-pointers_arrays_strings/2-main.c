@@ -57,3 +57,24 @@ First, solve the problem. Then, write the code
 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 0x2a 0x2a 0x2a 0x2a 0x2a 0x2a 0x2a 0x00
 */
+
+#include <string.h>
+
+/**
+ * _strncpy - a function that copies a string
+ * @dest: the first string
+ * @src: the second string that's to be appended
+ * @n: maximum n bytes to take from src
+ * Return: a pointer to the resulting string
+*/
+char *_strncpy(char *dest, const char *src, size_t n)
+{
+    size_t i;
+
+    for (i = 0; i < n && src[i] != '\0'; i++)
+        dest[i] = src[i];
+    for (; i < n; i++)
+        dest[i] = '\0';
+
+    return dest;
+}
