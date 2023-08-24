@@ -23,6 +23,8 @@ char *cap_string(char *str)
 				str[i] = str[i] - 32;
 			else if (str[i - 1] == 9)
 				str[i] = str[i] - 32;
+			else if (str[i - 1] == 0)
+				continue;
 		}
 	}
 	return (str);
