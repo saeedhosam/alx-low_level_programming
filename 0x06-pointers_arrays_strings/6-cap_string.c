@@ -13,8 +13,7 @@ char *cap_string(char *str)
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			if (str[i - 1] == '}'
-				|| str[i - 1] == ' '
+			if (str[i - 1] == ' '
 				|| str[i - 1] == '	'
 				|| str[i - 1] == '\n'
 				|| str[i - 1] == ','
@@ -25,7 +24,8 @@ char *cap_string(char *str)
 				|| str[i - 1] == '"'
 				|| str[i - 1] == '('
 				|| str[i - 1] == ')'
-				|| str[i - 1] == '{')
+				|| str[i - 1] == '{'
+				|| str[i - 1] == '}')
 				str[i] = str[i] - 32;
 		}
 	}
