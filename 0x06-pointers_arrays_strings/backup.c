@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include "main.h"
 
 /**
@@ -9,21 +8,24 @@
 */
 void print_number(int n)
 {
-	int i = 0;
+	int i, m = n, oldn = n, div = 1;
 
+	for (i = -1; m != 0; i++)
+		m = m / 10;
+
+	printf("i = %d\n", i);
 	if (n < 0)
-	{
 		_putchar('-');
-		n = -n;
+	if (n > 0)
+	{
+		while (n != 0)
+		{
+			n = n / 1000 / div;
+		}
+			printf("%d\n", n);
+			n = oldn;
+			div = div * 10;
 	}
 	if (n == 0)
 		_putchar('0');
-	for (;n != 0; n = n / 10)
-	{
-		i = i * 10 + n % 10;
-	}
-	for (; i != 0; i = i / 10)
-	{
-		_putchar(i % 10 + '0');
-	}
 }
