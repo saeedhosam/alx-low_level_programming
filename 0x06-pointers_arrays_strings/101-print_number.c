@@ -18,12 +18,8 @@ void print_number(int n)
 	}
 	if (n == 0)
 		_putchar('0');
-	for (;n != 0; n = n / 10)
-	{
+	for (; n != 0; n = n / 10)
 		i = i * 10 + n % 10;
-	}
 	for (; i != 0; i = i / 10)
-	{
 		_putchar(i % 10 + '0');
-	}
 }
