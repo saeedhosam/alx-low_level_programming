@@ -22,10 +22,7 @@ char *cap_string(char *str)
 			else if (str[i - 1] == 40 || str[i - 1] == 41 || str[i - 1] == 123)
 				str[i] = str[i] - 32;
 			else if (str[i - 1] == 9)
-			{
 				str[i] = str[i] - 32;
-				str[i - 1] = 32;
-			}
 		}
 	}
 	return (str);
