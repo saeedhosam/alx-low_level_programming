@@ -9,6 +9,7 @@
 */
 void print_number(int n)
 {
+	int orig = n;
 	unsigned int i = 0;
 
 	if (n < 0)
@@ -22,4 +23,6 @@ void print_number(int n)
 		i = i * 10 + n % 10;
 	for (; i != 0; i = i / 10)
 		_putchar(i % 10 + '0');
+	if (orig % 10 == 0 && orig != 0)
+		_putchar('0');
 }
