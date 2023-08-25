@@ -38,7 +38,6 @@ void print_number(int n)
 			_putchar(i % 10 + '0');
 		if (orig % 10 == 0 && orig != 0)
 			_putchar('0');
-		
 		if (orig >= 214748364 && minus > 0)
 			_putchar(j + '0');
 		else if (minus < -2147483647)
