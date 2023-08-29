@@ -10,14 +10,10 @@
  */
 char *_strchr(char *s, char c)
 {
-	int i, n;
+	int i;
 	char *str;
 
-	for (n = 0; s[n] != '\0';)
-		n++;
-	if (n == 0)
-		str = NULL;
-	for (i = 0; i < n; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
 		{
@@ -25,9 +21,9 @@ char *_strchr(char *s, char c)
 			break;
 		}
 		else
-		{
 			str = NULL;
-		}
 	}
+	if (s[0] == '\0')
+		str = NULL;
 	return (str);
 }
