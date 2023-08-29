@@ -21,9 +21,9 @@ char *_strchr(char *s, char c)
 			break;
 		}
 		else
-			str = NULL;
+			str = '\0';
 	}
 	if (s[0] == '\0')
-		str = NULL;
+		str = '\0';
 	return (str);
 }
