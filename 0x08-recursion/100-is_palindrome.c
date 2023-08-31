@@ -27,7 +27,8 @@ int is_palindrome(char *s)
 	if (s[0] == s[n - 1]
 	&& s[1] == s[n - 2]
 	&& s[2] == s[n - 3]
-	&& s[3] == s[n - 4])
+	&& s[3] == s[n - 4]
+	&& s[5] == s[n - 5])
 		return (1);
 	else
 		return (0);
