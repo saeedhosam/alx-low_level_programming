@@ -18,11 +18,14 @@ int main(int argc, char *argv[])
 	}
 	for (; argc >= 1; argc--)
 	{
-		if (argc > 2 && atoi(argv[argc - 1]) == 0)
-		{
-			printf("Error\n");
-			return (1);
-		}
+		char *c = argv[argc - 1];
+
+		if (argc > 1)
+			if (c[0] < 48 || c[0] > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		i = i + atoi(argv[argc - 1]);
 	}
 	printf("%d\n", i);
