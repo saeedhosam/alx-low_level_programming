@@ -27,7 +27,6 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < strlen(str); i++)
 	{
-		chk++;
 		if (str[i] != ' ')
 		{
 			c++;
@@ -39,6 +38,8 @@ char **strtow(char *str)
 				continue;
 			}
 		}
+		else
+			chk++;
 	}
 	if (chk == i)
 		return NULL;
