@@ -4,17 +4,14 @@
 #include "main.h"
 
 /**
- * strtow - splits a string into words
- * @str: string provided
- * Return: a pointer to an array of strings.
+ * hello - calculates how many strings in the array of character
+ * @str: a pointer to an array of characters
+ * Return: unsigned integer
 */
-char **strtow(char *str)
+unsigned int hello(char *str)
 {
-	unsigned int i, s = 0, c = 0, k = 0, n = 0, chk = 0;
-	char **ptr;
+	unsigned int i, s = 0;
 
-	if (str == NULL || str[0] == '\0')
-		return (NULL);
 	for (i = 0; i < strlen(str); i++)
 		if (str[i] != ' ')
 			if (str[i + 1] == ' ')
@@ -22,7 +19,22 @@ char **strtow(char *str)
 				s++;
 				continue;
 			}
-	ptr = malloc(sizeof(char *) * (s + 2));
+	return (s);
+}
+/**
+ * strtow - splits a string into words
+ * @str: string provided
+ * Return: a pointer to an array of strings.
+*/
+char **strtow(char *str)
+{
+	unsigned int i, c = 0, k = 0, n = 0, chk = 0;
+	char **ptr;
+
+	if (str == NULL || str[0] == '\0')
+		return (NULL);
+
+	ptr = malloc(sizeof(char *) * (hello(str) + 2));
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < strlen(str); i++)
@@ -42,7 +54,7 @@ char **strtow(char *str)
 			chk++;
 	}
 	if (chk == i)
-		return NULL;
+		return (NULL);
 	for (k = 0, i = 0; i < strlen(str); i++)
 		if (str[i] != ' ')
 		{
