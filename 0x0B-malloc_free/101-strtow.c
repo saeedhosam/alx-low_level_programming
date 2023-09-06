@@ -10,9 +10,11 @@
 */
 char **strtow(char *str)
 {
-	unsigned int i, s = 0, k = 0, n = 0;
+	unsigned int i, s = 0, c = 0, k = 0, n = 0;
 	char **ptr;
 
+	if (str == NULL || str[0] == '\0')
+		return (NULL);
 	for (i = 0; i < strlen(str); i++)
 		if (str[i] != ' ')
 			if (str[i + 1] == ' ')
@@ -23,8 +25,20 @@ char **strtow(char *str)
 	ptr = malloc(sizeof(char *) * (s + 1));
 	if (ptr == NULL)
 		return (NULL);
-	for (i = 0; i < s; i++)
-		ptr[i] = malloc(sizeof(char) * (strlen(str) + 1));
+	for (i = 0; i < strlen(str); i++)
+		if (str[i] != ' ')
+		{
+			c++;
+			if (str[i + 1] == ' ')
+			{
+				ptr[k] = malloc(sizeof(char) * (c + 1));
+				c = 0;
+				k++;
+				continue;
+			}
+		}
+		else if (str[i] == ' ' && str[i + 1] == '\0')
+			return (NULL);
 	for (k = 0, i = 0; i < strlen(str); i++)
 		if (str[i] != ' ')
 		{
