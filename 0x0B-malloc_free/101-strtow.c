@@ -13,7 +13,7 @@ char **strtow(char *str)
 	unsigned int i, s = 0, c = 0, k = 0, n = 0;
 	char **ptr;
 
-	if (str == NULL)
+	if (str == NULL || str[0] == ' ' || str[0] == '\0')
 		return (NULL);
 	for (i = 0; i < strlen(str); i++)
 		if (str[i] != ' ')
