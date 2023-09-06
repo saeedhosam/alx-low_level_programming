@@ -30,7 +30,7 @@ char **strtow(char *str)
 		if (str[i] != ' ')
 		{
 			c++;
-			if (str[i + 1] == ' ')
+			if (str[i + 1] == ' ' || str[i + 1] == '\0')
 			{
 				ptr[k] = malloc(sizeof(char) * (c + 1));
 				c = 0;
