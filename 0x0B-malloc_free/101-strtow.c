@@ -10,7 +10,7 @@
 */
 char **strtow(char *str)
 {
-	unsigned int i, s = 0, c = 0, k = 0, n = 0;
+	unsigned int i, s = 0, c = 0, k = 0, n = 0, chk = 0;
 	char **ptr;
 
 	if (str == NULL || str[0] == '\0')
@@ -26,6 +26,8 @@ char **strtow(char *str)
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < strlen(str); i++)
+	{
+		chk++;
 		if (str[i] != ' ')
 		{
 			c++;
@@ -37,8 +39,9 @@ char **strtow(char *str)
 				continue;
 			}
 		}
-		else if (str[i] == ' ' && str[i + 1] == '\0')
-			return (NULL);
+	}
+	if (chk == i)
+		return NULL;
 	for (k = 0, i = 0; i < strlen(str); i++)
 		if (str[i] != ' ')
 		{
