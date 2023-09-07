@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include <string.h>
 #include "main.h"
 
@@ -15,17 +16,17 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	int *ptr;
 
 	if (nmemb == 0 || size == 0)
-		return NULL;
+		return (NULL);
 
-	if (nmemb > UINT_MAX / size) // check for overflow
-		return NULL;
+	if (nmemb > UINT_MAX / size)
+		return (NULL);
 
-	ptr = malloc(nmemb * size);
+	ptr = malloc(sizeof(size) * nmemb);
 	if (ptr == NULL)
-		return NULL;
+		return (NULL);
 
 	for (i = 0; i < nmemb; i++)
 		ptr[i] = 0;
 
-	return ptr;
+	return (ptr);
 }
