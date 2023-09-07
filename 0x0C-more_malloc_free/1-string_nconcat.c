@@ -25,14 +25,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	if (n >= (strlen(s2) + 1))
-		n = (strlen(s2) + 1);
+	if (n >= strlen(s2))
+		n = strlen(s2);
 
 	ptr = malloc(sizeof(char) * (strlen(s1) + n + 1));
 	if (ptr == NULL)
 		return (NULL);
 
-	strcat(ptr, s1);
+	for (i = 0; i < strlen(s1); i++)
+		ptr[i] = s1[i];
 	for (i = 0; i < n; i++)
 		ptr[strlen(s1) + i] = s2[i];
 	ptr[strlen(s1) + i] = '\0';
