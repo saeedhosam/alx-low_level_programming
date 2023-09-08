@@ -43,14 +43,10 @@ int main(int argc, char *argv[])
 	for (i = 0; argv[2][i] != '\0'; i++)
 		num2[i] = argv[2][i] - 48;
 
-	for (i = 0; i < strlen(argv[1]); i++)
-		printf("%d", num1[i]);
-	putchar('\n');
-	for (i = 0; i < strlen(argv[2]); i++)
-		printf("%d", num2[i]);
-	putchar('\n');
-
 	mul(num1, num2, len1, len2);
+
+	free(num1);
+	free(num2);
 
 	return (0);
 }
