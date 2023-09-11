@@ -10,7 +10,7 @@ int main(void)
 {
     char *t;
 
-    t = _strpbrk("First, solve the problem. Then, write the code.", "");
+    t = _strpbrk("", "abcdef");
     printf("%s\n", t);
     return (0);
 }
