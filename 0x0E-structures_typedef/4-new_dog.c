@@ -19,16 +19,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (d == NULL)
 		return (NULL);
 
-	if (d->name != NULL)
-		printf("Name: %s\n", d->name);
-	else
-		printf("Name: (nil)\n");
-
-	printf("Age: %f\n", d->age);
-
-	if (d->owner)
-		printf("Owner: %s\n", d->owner);
-	else
-		printf("Owner: (nil)\n");
+	d->name = name;
+	if (d->name == NULL)
+		return (NULL);
+	d->age = age;
+	d->owner = owner;
+	if (d->owner == NULL)
+		return (NULL);
 	return (d);
 }
