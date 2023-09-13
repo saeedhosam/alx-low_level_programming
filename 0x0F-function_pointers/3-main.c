@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	ptr = get_op_func(argv[2]);
 	res = ptr(num1, num2);
 
-	printf("res = %d\n", res);
+	printf("%d\n", res);
 
 	return (0);
 }
