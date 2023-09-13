@@ -9,7 +9,7 @@
  * @name: the name to be printed
  * @f: a pointer to function
  *
- * Return: notion
+ * Return: nothing
 */
 void print_name(char *name, void (*f)(char *))
 {
