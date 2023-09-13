@@ -34,7 +34,9 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < nb; i++)
 	{
-		printf("%.2x ", *((unsigned char *)wut + i));
+		printf("%.2x", *((unsigned char *)wut + i));
+		if (i != nb - 1)
+			printf(" ");
 	}
 
 	printf("\n");
