@@ -12,11 +12,23 @@
 */
 int (*get_op_func(char *s))(int, int)
 {
-	int (*op)(int, int);
-	
-	if (s == "+\0")
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i;
+
+	i = 0;
+	while (i <= 6)
 	{
-		op = op_add;
-		return (op);
+		if (strcmp(ops[i].op, s) == 0)
+			return (ops[i].f);
+		else
+			return (NULL);
 	}
+
 }
