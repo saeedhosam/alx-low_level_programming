@@ -25,8 +25,6 @@ void print_all(const char * const format, ...)
 
 	while (i < len)
 	{
-		while (format[i] != 'c' || format[i] != 'i' || format[i] != 's')
-			break;
 		switch (format[i])
 		{
 			case 's':
