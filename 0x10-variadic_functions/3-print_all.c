@@ -25,7 +25,10 @@ void print_all(const char * const format, ...)
 		{
 			case 's':
 				s = va_arg(args, char *);
-				printf("%s", s);
+				if (s == NULL)
+					printf("(nil)");
+				if (s != NULL)
+					printf("%s", s);
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
