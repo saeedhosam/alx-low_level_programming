@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
-#include <stdlib.h>
 #include "variadic_functions.h"
 
 /**
@@ -14,21 +13,21 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int len, i = 0;
-	char *s;
 	va_list args;
 
+	if (format == NULL)
+		return;
 	len = strlen(format);
 	va_start(args, format);
-	while (i <= len)
+	while (i < len)
 	{
 		switch (format[i])
 		{
 			case 's':
-				s = va_arg(args, char *);
-				if (s == NULL)
+				if (va_arg(args, char *) == NULL)
 					printf("(nil)");
-				if (s != NULL)
-					printf("%s", s);
+				if (va_arg(args, char *) != NULL)
+					printf("%s", va_arg(args, char *));
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
@@ -43,7 +42,7 @@ void print_all(const char * const format, ...)
 				i++;
 				continue;
 		}
-		while (i != len - 1)
+		while (i != (len - 1))
 		{
 			printf(", ");
 			break;
