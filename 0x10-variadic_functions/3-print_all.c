@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include "variadic_functions.h"
-
 /**
  * print_all - prints anything
  *
@@ -14,19 +13,22 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int len, i = 0;
+	char *s;
 	va_list args;
 
 	len = strlen(format);
 	va_start(args, format);
 	while (i < len)
+	while (i <= len)
 	{
 		switch (format[i])
 		{
 			case 's':
-				if (va_arg(args, char *) == NULL)
+				s = va_arg(args, char *);
+				if (s == NULL)
 					printf("(nil)");
-				if (va_arg(args, char *) != NULL)
-					printf("%s", va_arg(args, char *));
+				if (s != NULL)
+					printf("%s", s);
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
@@ -41,14 +43,13 @@ void print_all(const char * const format, ...)
 				i++;
 				continue;
 		}
-		while (i != (len - 1))
+		while (i != len - 1)
 		{
 			printf(", ");
 			break;
 		}
 		i++;
 	}
-
 	printf("\n");
 	va_end(args);
 }
